@@ -24,7 +24,7 @@ export default Header;
 ```
 *Para que el componente se visualice se debe agregar en `src/App.js` <br>
 *Es necesario importar el componente para que no se produzca un error `import Header from './componentes/Header';` <br>
-*Se incluye dentro de render() como una etiqueta `<Header /> <br>
+*Se incluye dentro de render() como una etiqueta `<Header />` <br>
 
 
 
