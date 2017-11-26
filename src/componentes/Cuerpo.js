@@ -17,8 +17,10 @@ class Cuerpo extends Component{
 						      Panel content
 						      	<Form>
 						      		<FormControl placeholder='Ingresa tu tarea' />
+						      		<Button bsStyle="btn btn-success btn-lg btn-block" className="btn-tarea">Crear Tarea</Button>
 						      	</Form>
 						    </Panel>
+
 		        		</Col>
 		        	</Row>
 		        </Grid>
