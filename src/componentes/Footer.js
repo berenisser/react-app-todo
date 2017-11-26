@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Panel, Button, Grid, Row, Col, FormControl, Form } from 'react-bootstrap';
 
 class Footer extends Component{
 	
