@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
-import { Panel, Button, Grid, Row, Col, FormControl, Form } from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-bootstrap';
+import PropTypes from 'prop-types';
+import TextoInput from './TextoInput';
 
-class Cuerpo extends Component{
-	
+class Cuerpo extends Component{	
+  static propTypes = {
+    addTodo: PropTypes.func.isRequired
+  }
 
-	render(){
-		return (
-			<div>
-				<p className="App-intro">
-		        	Hola ingresa tus tareas
-		        </p>
-		        <Grid>
-		        	<Row className="show-grid">
-		        		<Col md={6} mdPush={3}>
-		        			<Panel header="Tarea Nueva" bsStyle="success">
-						      Panel content
-						      	<Form>
-						      		<FormControl placeholder='Ingresa tu tarea' />
-						      		<Button bsStyle="btn btn-success btn-lg btn-block" className="btn-tarea">Crear Tarea</Button>
-						      	</Form>
-						    </Panel>
+  guardarTarea = text => {
+    if (text.length !== 0) {
+      this.props.addTodo(text)
+    }
+  }
 
-		        		</Col>
-		        	</Row>
-		        </Grid>
-         		
-		   </div>
-		);
-	}
+  render() {
+    return (
+      <div className="header">
+		<Grid>
+		    <Row className="show-grid">
+		        <Col md={4} mdPush={4}>   
+		        	<h1>todos</h1>     
+        			<TextoInput newTodo
+            			onSave={this.guardarTarea}
+            			placeholder="¿Que tienes que hacer?" />
+		        </Col>
+		    </Row>
+		</Grid>            
+     </div>
+    )
+  }
 }
 
 export default Cuerpo;
