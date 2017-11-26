@@ -22,11 +22,11 @@ class Header extends Component{
 
 export default Header;
 ```
--Para que el componente se visualice se debe agregar en `src/App.js`
--Es necesario importar el componente para que no se produzca un error `import Header from './componentes/Header';`
--Se incluye dentro de render() como una etiqueta `<Header />
+*Para que el componente se visualice se debe agregar en `src/App.js`
+*Es necesario importar el componente para que no se produzca un error `import Header from './componentes/Header';`
+*Se incluye dentro de render() como una etiqueta `<Header />
 
 
 
 
-[here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+[Más info de cambios o componentes que se pueden incluir](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
