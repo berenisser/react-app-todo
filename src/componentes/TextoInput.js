@@ -12,15 +12,15 @@ class TextoInput extends Component{
   }
 
   state = {
-    text: this.props.text || ''
+    text: this.props.text || '' //Estado interno de un componente. maneja diferencias del estado
   }
 
   enviarTarea = e => {
     const text = e.target.value.trim()
-    if (e.which === 13) {
+    if (e  === 13) {
       this.props.onSave(text)
       if (this.props.newTodo) {
-        this.setState({ text: '' })
+        this.setState({ text: '' }) //llama automaticamente a render sin forzar
       }
     }
   }

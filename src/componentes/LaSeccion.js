@@ -19,7 +19,7 @@ class LaSeccion extends Component  {
 
   state = { filter: SHOW_ALL }
 
-  handleClearCompleted = () => {
+  despejado = () => {
     this.props.actions.clearCompleted()
   }
 
@@ -52,7 +52,7 @@ class LaSeccion extends Component  {
         <PieTarea completedCount={completedCount}
                 activeCount={activeCount}
                 filter={filter}
-                onClearCompleted={this.handleClearCompleted}
+                onClearCompleted={this.despejado}
                 onShow={this.handleShow} />
       )
     }
@@ -73,13 +73,13 @@ class LaSeccion extends Component  {
     <Grid>
         <Row className="show-grid">
             <Col md={4} mdPush={8}>       
-        {this.renderToggleAll(completedCount)}
-        <ul className="todo-list">
-          {filteredTodos.map(todo =>
-            <Items key={todo.id} todo={todo} {...actions} />
-          )}
-        </ul>
-        {this.renderFooter(completedCount)}
+              {this.renderToggleAll(completedCount)}
+              <ul className="todo-list">
+                {filteredTodos.map(todo =>
+                  <Items key={todo.id} todo={todo} {...actions} />
+                )}
+              </ul>
+              {this.renderFooter(completedCount)}
             </Col>
         </Row>
     </Grid>         
