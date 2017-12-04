@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Panel, Button, Grid, Row, Col, FormControl, Form } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
 
 class Cuerpo extends Component{
 	
@@ -7,27 +7,30 @@ class Cuerpo extends Component{
 	render(){
 		return (
 			<div>
-				<p className="App-intro">
-		        	Hola ingresa tus tareas
-		        </p>
-		        <Grid>
-		        	<Row className="show-grid">
-		        		<Col md={6} mdPush={3}>
-		        			<Panel header="Tarea Nueva" bsStyle="success">
-						      Panel content
-						      	<Form>
-						      		<FormControl placeholder='Ingresa tu tarea' />
-						      		<Button bsStyle="btn btn-success btn-lg btn-block" className="btn-tarea">Crear Tarea</Button>
-						      	</Form>
-						    </Panel>
-
-		        		</Col>
-		        	</Row>
-		        </Grid>
-         		
+    			<div className="col col-md-4 offset-md-1">
+					<div className="panel panel-warning">
+						<div className="panel-heading">
+							<h3 className="panel-title">Agregar Tarea Nueva</h3>
+						</div>
+						
+						<div className="panel-body">
+							<input type="text" className="form-control" name="" placeholder="¿Qué tarea necesitas hacer?"/>
+							
+							<select className="custom-select btn-tarea">
+							  <option selected>Escoge una catergoría</option>
+							  <option value="trabajo">Trabajo</option>
+							  <option value="estudios">Estudios</option>
+							  <option value="casa">Casa</option>
+							</select>
+							<button type="button" className="btn btn-warning form-control btn-tarea">Crear Tarea</button>
+						</div>
+					</div>
+				</div>
 		   </div>
 		);
 	}
 }
 
 export default Cuerpo;
+
+

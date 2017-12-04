@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './componentes/Header';
-import Cuerpo from './componentes/Cuerpo';
+import Routes from './Routes';
 import Footer from './componentes/Footer';
+import Side from './componentes/Side';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Cuerpo />
+        <div className="container">
+        	<div className="row">
+        		<Side />
+        		<Routes />
+        	</div>
+        </div>
+        
         <Footer />
       </div>
     );

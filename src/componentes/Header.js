@@ -4,7 +4,7 @@ class Header extends Component{
 	render(){
 		return (
 			<header className="App-header">
-	          <h1 className="App-title">Lista de tareas</h1>
+	          <h1 className="App-title">Tus Tareas</h1>
 	        </header>
 		);
 	}
