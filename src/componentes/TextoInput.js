@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 class TextoInput extends Component{	
   static propTypes = {
-    onSave: PropTypes.func.isRequired,
+    onSave: PropTypes.func,
     text: PropTypes.string,
     placeholder: PropTypes.string,
     editing: PropTypes.bool,
@@ -14,18 +14,20 @@ class TextoInput extends Component{
   state = {
     text: this.props.text || '' //Estado interno de un componente. maneja diferencias del estado
   }
-
+  /*
   enviarTarea = e => {
     const text = e.target.value.trim()
-    if (e  === 13) {
+    if (e.keyCode  === 13) {
       this.props.onSave(text)
       if (this.props.newTodo) {
         this.setState({ text: '' }) //llama automaticamente a render sin forzar
       }
     }
   }
+*/
 
   cambiarTarea = e => {
+    this.props.onTextChange(e)
     this.setState({ text: e.target.value })
   }
 
@@ -48,7 +50,7 @@ class TextoInput extends Component{
         value={this.state.text}
         onBlur={this.marcarTarea}
         onChange={this.cambiarTarea}
-        onKeyDown={this.enviarTarea} />
+        onKeyDown={this.enviarTarea} />  
     )
   }
 }
