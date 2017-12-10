@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from './componentes/Header'
-import Cuerpo from './componentes/Cuerpo'
+import TextoInput from './componentes/TextoInput'
 import LaSeccion from './componentes/LaSeccion'
 import Footer from './componentes/Footer'
 import * as TodoActions from './actions'
@@ -11,7 +11,7 @@ import * as TodoActions from './actions'
 const App = ({todos, actions}) => (
   <div>
   	<Header />
-    <Cuerpo addTodo={actions.addTodo} />
+    <TextoInput addTodo={actions.addTodo} />
     <LaSeccion todos={todos} actions={actions} />
     <Footer />
   </div>

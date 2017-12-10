@@ -4,6 +4,7 @@ const initialState = [
   {
     text: 'Terminar Proyecto React',
     completed: false,
+    categoria: 'Estudios',
     id: 0
   }
 ]
@@ -16,7 +17,8 @@ export default function todos(state = initialState, action) {
         {
           id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
           completed: false,
-          text: action.text
+          text: action.text,
+          categoria: action.categoria
         }
       ]
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Grid, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types'
 import Items from './Items'
 import PieTarea from './PieTarea'
@@ -32,11 +31,9 @@ class LaSeccion extends Component  {
     if (todos.length > 0) {
       return (
         <span>
-          <input className="toggle-all"
-                 type="checkbox"
-                 checked={completedCount === todos.length}
-                 />
-          <label onClick={actions.completeAll}/>
+          <a onClick={actions.completeAll}>
+            marcar todos
+          </a>
         </span>
       )
     }
@@ -69,8 +66,8 @@ class LaSeccion extends Component  {
     )
 
     return (
-      <section className="main">
-    <Grid>
+      <div className="offset-md-6 col-md-4">
+    {/* <Grid>
         <Row className="show-grid">
             <Col md={4} mdPush={8}>       
               {this.renderToggleAll(completedCount)}
@@ -82,8 +79,24 @@ class LaSeccion extends Component  {
               {this.renderFooter(completedCount)}
             </Col>
         </Row>
-    </Grid>         
-      </section>
+    </Grid>   */}
+
+    
+        
+            <div>       
+              {this.renderToggleAll(completedCount)}
+              <div>
+                {filteredTodos.map(todo =>
+                  <Items key={todo.id} todo={todo} {...actions} />
+                )}
+              </div>
+              {this.renderFooter(completedCount)}
+            </div>
+       
+   
+
+       
+    </div>
     )
   }
 }

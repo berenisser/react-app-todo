@@ -16,7 +16,7 @@ class Items extends Component{
   }
 
   DobleClick = () => {
-    this.setState({ editing: true })
+    this.setState({ editing: false })
   }
 
   Guardar = (id, text) => {
@@ -48,19 +48,27 @@ class Items extends Component{
           <label onDoubleClick={this.DobleClick}>
             {todo.text}
           </label>
-          <button className="destroy"
-                  onClick={() => deleteTodo(todo.id)} />
+          <a className="destroy"
+                  onClick={() => deleteTodo(todo.id)} >
+                  eliminar
+          </a>        
         </div>
       )
     }
 
     return (
-      <li className={classnames({
-        completed: todo.completed,
-        editing: this.state.editing
-      })}>
-        {element}
-      </li>
+      <div className="card">
+        <div className="" style={{border:'1px solid gray', padding: '5px', margin: '10px'}}>
+          <div className={classnames({
+            completed: todo.completed,
+            editing: this.state.editing,
+            
+          })}>
+            {element}
+          </div>
+        </div>
+        
+      </div>
     )
   }
 }
