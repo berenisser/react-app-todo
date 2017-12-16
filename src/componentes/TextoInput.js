@@ -46,6 +46,8 @@ class TextoInput extends Component{
     if (texto.length !== 0) {
       this.props.addTodo(texto,categoria)
     }
+    this.setState({texto: ''})
+    this.setState({categoria:'Categoria'});
   }  
 
   render() {
@@ -73,7 +75,8 @@ class TextoInput extends Component{
 							
              <select value={this.state.categoria} 
              onChange={this.handleChange} 
-             >
+             >  
+                <option disabled="disabled" selected="selected">Categoria</option>
                 <option value="Trabajo">Trabajo</option>
                 <option value="Estudio">Estudio</option>
                 <option value="Casa">Casa</option>
