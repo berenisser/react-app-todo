@@ -19,13 +19,13 @@ class Items extends Component{
     this.setState({ editing: false })
   }
 
-  Guardar = (id, text) => {
+  Guardar = (id, text,categoria) => {
     if (text.length === 0) {
       this.props.deleteTodo(id)
     } else {
-      this.props.editTodo(id, text)
+      this.props.editTodo(id, text, categoria)
     }
-    this.setState({ editing: false })
+    this.setState({ editing: false })    
   }
 
   render() {
@@ -35,8 +35,9 @@ class Items extends Component{
     if (this.state.editing) {
       element = (
         <TextotInput text={todo.text}
+                      categoria={todo.categoria}
                        editing={this.state.editing}
-                       onSave={(text) => this.Guardar(todo.id, text)} />
+                       onSave={(text) => this.Guardar(todo.id, text, todo.categoria)} />
       )
     } else {
       element = (
@@ -45,9 +46,11 @@ class Items extends Component{
                  type="checkbox"
                  checked={todo.completed}
                  onChange={() => completeTodo(todo.id)} />
+
           <label onDoubleClick={this.DobleClick}>
-            {todo.text}
+            {todo.text} / Categoría: {todo.categoria} 
           </label>
+
           <a className="destroy"
                   onClick={() => deleteTodo(todo.id)} >
                   eliminar
@@ -72,5 +75,4 @@ class Items extends Component{
     )
   }
 }
-
 export default Items;
