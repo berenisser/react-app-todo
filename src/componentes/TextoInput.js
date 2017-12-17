@@ -24,7 +24,7 @@ class TextoInput extends Component{
   }
 
   onTextChange = e => {
-    this.setState({texto: e.target.value.trim()})
+    this.setState({texto: e.target.value})
   }
 
   cambiarTarea = e => {
