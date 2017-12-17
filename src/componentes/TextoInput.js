@@ -57,7 +57,7 @@ class TextoInput extends Component{
     			<div className="col col-md-4 offset-md-1">
 					 <div className="panel panel-warning">
 						<div className="panel-heading">
-							<h3 className="panel-title">Agregar Tarea Nueva</h3>
+							<h3 className="panel-title"><i className="material-icons icons-panel">event_note</i>AGREGAR NUEVA TAREA</h3>
 						</div>
 						
 						<div className="panel-body">
@@ -66,14 +66,14 @@ class TextoInput extends Component{
                     edit: this.props.editing,
                     'new-todo': this.props.newTodo
                     })} 
-              className="form-control" 
+              className="form-control form-input" 
               type="text"
               placeholder="¿Que tienes que hacer?"
               autoFocus="true"
               value={this.state.texto}
               onChange={this.onTextChange}/>
 							
-             <select value={this.state.categoria} 
+             <select className="select-box" value={this.state.categoria} 
              onChange={this.handleChange} 
              >  
                 <option disabled="disabled" selected="selected">Categoria</option>
