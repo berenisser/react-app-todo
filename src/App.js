@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,37 +9,20 @@ import Routes from './Routes'
 import Footer from './componentes/Footer'
 import * as TodoActions from './actions'
 
-const App = ({todos, actions}) => (
-  <div>
-  	<Header />
-    
-    <div className="container">
-      <div className="row">
-        <SideNavbar />
-        <Routes />
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <div className="container">
+          <div className="row">
+            <SideNavbar />
+            <Routes />
+          </div>
+        </div>
+        <Footer />
       </div>
-    </div>
+    );
+  }}
 
-    <Footer />
-  </div>
-)
-
-App.propTypes = {
-  todos: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
-}
-
-const mapStateToProps = state => ({
-  todos: state.todos
-})
-
-const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
-
-
+  export default App;
