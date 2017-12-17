@@ -4,7 +4,7 @@ const initialState = [
   {
     text: 'Terminar Proyecto React',
     completed: false,
-    categoria: 'Estudios',
+    categoria: 'estudios',
     id: 0
   }
 ]

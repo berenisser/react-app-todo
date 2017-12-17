@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import TextotInput from './TextoInput'
+//import TextotInput from './TextoInput'
 
 class Items extends Component{
   static propTypes = {
@@ -15,10 +15,10 @@ class Items extends Component{
     editing: false
   }
 
-  DobleClick = () => {
-    this.setState({ editing: false })
+  DobleClick = (e) => {
+    this.setState({ editing: false })  
   }
-
+ 
   Guardar = (id, text,categoria) => {
     if (text.length === 0) {
       this.props.deleteTodo(id)
@@ -34,7 +34,7 @@ class Items extends Component{
     let element
     if (this.state.editing) {
       element = (
-        <TextotInput text={todo.text}
+        <input text={todo.text}
                       categoria={todo.categoria}
                        editing={this.state.editing}
                        onSave={(text) => this.Guardar(todo.id, text, todo.categoria)} />
@@ -42,18 +42,19 @@ class Items extends Component{
     } else {
       element = (
         <div className="view">
-          <input className="toggle"
+          <input className="toggle-checkbox"
                  type="checkbox"
                  checked={todo.completed}
                  onChange={() => completeTodo(todo.id)} />
 
-          <label onDoubleClick={this.DobleClick}>
-            {todo.text} / Categoría: {todo.categoria} 
+          <label className="content-textca" onDoubleClick={this.DobleClick}>
+            <span className="text-tarea">{todo.text}</span>
+            <span className={todo.categoria} id="categoria-items" >{todo.categoria}</span>
           </label>
 
           <a className="destroy"
-                  onClick={() => deleteTodo(todo.id)} >
-                  eliminar
+              onClick={() => deleteTodo(todo.id)} >
+              <i class="material-icons">close</i>
           </a>        
         </div>
       )
@@ -61,7 +62,7 @@ class Items extends Component{
 
     return (
       <div className="card">
-        <div className="" style={{border:'1px solid gray', padding: '5px', margin: '10px'}}>
+        <div className="card-element">
           <div className={classnames({
             completed: todo.completed,
             editing: this.state.editing,

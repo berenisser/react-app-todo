@@ -46,10 +46,10 @@ class PieTarea extends Component {
     const { completedCount, onClearCompleted } = this.props
     if (completedCount > 0) {
       return (
-        <button className="clear-completed"
+        <a className="clear-completed"
                 onClick={onClearCompleted} >
           Sacar Tareas Terminadas
-        </button>
+        </a>
       )
     }
   }

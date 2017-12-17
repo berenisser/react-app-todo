@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+//import classnames from 'classnames';
 
 class TextoInput extends Component{	
   static propTypes = {
@@ -9,8 +9,8 @@ class TextoInput extends Component{
     text: PropTypes.string,
     categoria: PropTypes.string,
     placeholder: PropTypes.string,
-    editing: PropTypes.bool,
-    newTodo: PropTypes.bool
+    editing: PropTypes.bool
+    //newTodo: PropTypes.bool
   }
 
   state = {
@@ -21,10 +21,12 @@ class TextoInput extends Component{
 
   handleChange = e =>{
     this.setState({categoria:e.target.value});
+    console.log({categoria:e.target.value})
   }
 
   onTextChange = e => {
     this.setState({texto: e.target.value})
+    console.log({texto: e.target.value})    
   }
 
   cambiarTarea = e => {
@@ -38,17 +40,17 @@ class TextoInput extends Component{
     }
   }
 
-  guardarTarea = () => {
+  guardarTarea = (e) => {
     const { texto } = this.state
     const { categoria } = this.state
     console.log(categoria)
-
-    if (texto.length !== 0) {
-      this.props.addTodo(texto,categoria)
-    }
-    this.setState({texto: ''})
-    this.setState({categoria:'Categoria'});
-  }  
+  
+    if (texto.length !== 0 && {categoria} !== '') {
+      this.props.addTodo(texto,categoria)                  
+    }      
+      this.setState({ texto: '' })
+      this.setState({categoria:''})      
+}  
 
   render() {
     return (
@@ -61,11 +63,7 @@ class TextoInput extends Component{
 						</div>
 						
 						<div className="panel-body">
-              <input className= {
-                    classnames({
-                    edit: this.props.editing,
-                    'new-todo': this.props.newTodo
-                    })} 
+              <input 
               className="form-control form-input" 
               type="text"
               placeholder="¿Que tienes que hacer?"
@@ -76,16 +74,16 @@ class TextoInput extends Component{
              <select className="select-box" value={this.state.categoria} 
              onChange={this.handleChange} 
              >  
-                <option disabled="disabled" selected="selected">Categoria</option>
-                <option value="Trabajo">Trabajo</option>
-                <option value="Estudio">Estudio</option>
-                <option value="Casa">Casa</option>
+                <option disabled="disabled" selected="selected" value=''>Categoria</option>
+                <option value="trabajo">Trabajo</option>
+                <option value="estudios">Estudio</option>
+                <option value="casa">Casa</option>
               </select>
               
 
               <button type="button" 
               id='crearTarea' onClick={this.guardarTarea}
-              className="btn btn-warning form-control btn-tarea">Crear Tarea</button>
+              className="btn btn-warning form-control btn-tarea">CREAR TAREA</button>
 						</div>
 					</div>
 				</div>

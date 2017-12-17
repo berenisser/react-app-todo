@@ -31,7 +31,7 @@ class LaSeccion extends Component  {
     if (todos.length > 0) {
       return (
         <span>
-          <a onClick={actions.completeAll}>
+          <a onClick={actions.completeAll} className="marcar-todos">
             marcar todos
           </a>
         </span>
@@ -67,22 +67,6 @@ class LaSeccion extends Component  {
 
     return (
       <div className="offset-md-6 col-md-4">
-    {/* <Grid>
-        <Row className="show-grid">
-            <Col md={4} mdPush={8}>       
-              {this.renderToggleAll(completedCount)}
-              <ul className="todo-list">
-                {filteredTodos.map(todo =>
-                  <Items key={todo.id} todo={todo} {...actions} />
-                )}
-              </ul>
-              {this.renderFooter(completedCount)}
-            </Col>
-        </Row>
-    </Grid>   */}
-
-    
-        
             <div>       
               {this.renderToggleAll(completedCount)}
               <div>
@@ -91,12 +75,8 @@ class LaSeccion extends Component  {
                 )}
               </div>
               {this.renderFooter(completedCount)}
-            </div>
-       
-   
-
-       
-    </div>
+            </div>   
+      </div>
     )
   }
 }

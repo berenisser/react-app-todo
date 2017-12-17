@@ -5,6 +5,7 @@
   padding: 20px;
   color: white;
   margin-bottom: 50px;
+  cursor:pointer;
 }
 
 .App-title a{
@@ -16,14 +17,16 @@
   letter-spacing: 2px;
   font-size: 20px;
   color: gray;
-  font-weight: 200;  
+  font-weight: 200; 
+  cursor:pointer; 
 }
 .App-title a:hover{
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center; 
-  text-decoration: underline red;  
+  text-decoration: underline red; 
+  cursor:pointer; 
 }
 
 .App-intro {
@@ -121,8 +124,160 @@
   width: 100%;
   height: 38px;
   margin: 10px 0;
-
+  cursor:pointer  
 }
 .select-box:focus{
   outline: none;
+}
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:focus {
+  background: white;
+  -webkit-filter: none;
+  filter: none;
+  border-radius: 30px;
+  border: 2px solid gold;
+  color: gold;
+  letter-spacing: 3px;   
+  margin: 30px 0 10px; 
+  outline: none;
+  box-shadow:none;  
+}
+
+.btn-warning:hover{
+  background: gold;
+  -webkit-filter: none;
+  filter: none;
+  border-radius: 30px;
+  border: 2px solid gold;
+  color: white;
+  letter-spacing: 3px;   
+  margin: 30px 0 10px; 
+  outline: none;
+  box-shadow:none;
+}
+.btn-warning:active:focus{
+  color: #ffffff;
+  background-color: gold;
+  border-color: gold;
+  outline: none;  
+}
+
+.filters{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+.filters li {
+  text-decoration: none;
+  list-style-type:none; 
+  margin-bottom: 10px;
+}
+.filters li a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  background: white;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 40px;
+  border: 1px solid white;
+}
+
+.marcar-todos{
+  text-decoration: none;
+  display: flex;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  background: white;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 40px;
+  border: 1px solid white;
+}
+.filters li a:hover,
+.marcar-todos:hover{
+  text-decoration: none;
+  color: mediumpurple;
+  border: 1px solid mediumpurple;
+}
+
+.card-element{
+  border: none;
+  padding: 10px 5px 5px;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  background: white;
+  box-shadow: 0px 1px 8px lightgrey;  
+}
+
+input[type="radio"], 
+input[type="checkbox"] {
+    margin: 0px 10px 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+.clear-completed{
+    color: white;
+    background: gold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.clear-completed:hover{
+    color: mediumpurple;
+    text-decoration: none;
+}
+
+.text-tarea{
+  font-weight: 400;
+}
+
+#categoria-items{
+  margin: 0 10px;
+  color: white;
+  padding: 0 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+}
+.estudios{
+  background: turquoise;  
+}
+.trabajo{
+  background: tomato;  
+}
+.casa{
+  background: yellowgreen;  
+}
+
+.view{
+  width: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-textca{
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.destroy i{
+  font-size: 17px;
+  cursor: pointer;
 }
