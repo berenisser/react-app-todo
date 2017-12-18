@@ -28,6 +28,7 @@ export default Header;
 
 Una vez hechas las pruebas iniciales, procedimos a organizar la estructura de los componentes y las secciones necesarios, nos dimos cuenta que planear este orden era crucial:
 
+```
 *Header
 *Sidenav
 	*Home
@@ -37,6 +38,7 @@ Una vez hechas las pruebas iniciales, procedimos a organizar la estructura de lo
 	*TareasCasa
 	*TareasEstudio
 	*TareasTrabajo
+```
 
 Se instaló `react-router-dom` y se agregò el archivo Routes.js el cual contiene las rutas necesarias para la navegacion dentro del componente Sidenav
 
