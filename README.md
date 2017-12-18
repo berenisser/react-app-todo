@@ -43,6 +43,21 @@ Una vez hechas las pruebas iniciales, procedimos a organizar la estructura de lo
 Se instaló `react-router-dom` y se agregò el archivo Routes.js el cual contiene las rutas necesarias para la navegacion dentro del componente Sidenav
 
 
+Librería Redux  
+`npm install --save redux` 
+`npm install --save react-redux` 
+Para controlar el estado de la aplicación.
+
+* Acciones son POJOs (Plain Old JavaScript Objects) con al menos una propiedad que indica el tipo de acción y, de ser necesario, otras propiedades indicando cualquier otro dato necesario para efectuar nuestra acción. 
+
+* Reducers es como nuestra aplicación reacciona a las “Acciones”
+
+* Store va a tener cuatro responsabilidades
+
+1. Almacenar el estado global de la aplicación
+2. Dar acceso al estado mediante store.getState()
+3. Permitir que el estado se actualice mediante store.dispatch()
+4. Registrar listeners mediante store.subscribe(listener)
 
 
 [Más info de cambios o componentes que se pueden emplear](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
